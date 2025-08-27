@@ -16,6 +16,12 @@
 //         idade: Number,
 //         ativo: Boolean,
 // }
+// import {ref} from 'vue'
+// import Exemplo11 from './components/Exemplo11Emits.vue';
+// const totalCliques = ref(0)
+// function atualizarTotalCliques(valor){
+//     totalCliques.value = valor
+// }
 
 //import Exercicio1 from './components/Exercicios/1.1.vue'
 //import Exercicio2 from './components/Exercicios/1.2.vue'
@@ -30,9 +36,26 @@
 //import Exercicio11 from './components/Exercicios/6.1.vue'
 //import Exercicio12 from './components/Exercicios/7.1.vue'
 //import Exercicio13 from './components/Exercicios/8.1.vue'
-import ProductCard from './components/Exercicios/10.1.vue'
+//import ProductCard from './components/Exercicios/10.1.vue'
 
 
+
+import { ref } from 'vue'
+import ProdutoCard from './components/Exercicios/11.1.vue'
+
+const produtos = ref([
+	{ nome: 'Blush em Pó Cloud Crush - Too Faced', price: 250 },
+	{ nome: 'Máscara De Cílios Better Than Sex - Too Faced', price: 221 },
+	{ nome: 'Corretivo Líquido Born This Way Super Coverage - Too Faced', price: 237 }
+]) // lISTA DE PRODUTOS
+
+const mensagemCompra = ref('')
+
+function handleBuy(nomeProduto) {
+	const msg = `Você comprou ${nomeProduto}`
+	mensagemCompra.value = msg
+	console.log(msg)
+} // MENSAGEM DE COMPRA
 </script>
 
 <template>
@@ -45,20 +68,36 @@ import ProductCard from './components/Exercicios/10.1.vue'
 <Exemplo07></Exemplo07>
 <Exemplo08></Exemplo08>
 <Exemplo09></Exemplo09>
-<!-- <UserCard :nome="user.nome" email="livia@gmail.com" idade="17" telefone="1199999999" ativo="true" ></UserCard> -->
- <ProductCard title="Blush em Pó Cloud Crush" :price="259" image="https://www.toofaced.com.br/media/export/cms/products/1000x1000/2f_sku_163973_1000x1000_0.jpg" :inStock="true" />
+<!-- <UserCard :nome="user.nome" email="livia@gmail.com" idade="17" telefone="1199999999" ativo="true" ></UserCard>
+<ProductCard title="Blush em Pó Cloud Crush" :price="259" image="https://www.toofaced.com.br/media/export/cms/products/1000x1000/2f_sku_163973_1000x1000_0.jpg" :inStock="true" /> -->
+<!-- <Exemplo11 @update="atualizarTotalCliques"></Exemplo11>
+<p>Total de cliques: {{ totalCliques }}</p> -->
 
-<Exercicio1></Exercicio1>
-<Exercicio2></Exercicio2>
-<Exercicio3></Exercicio3>
-<Exercicio4></Exercicio4>
-<Exercicio5></Exercicio5>
-<Exercicio6></Exercicio6>
-<Exercicio7></Exercicio7>
-<Exercicio8></Exercicio8>
-<Exercicio9></Exercicio9>
-<Exercicio10></Exercicio10>
-<Exercicio11></Exercicio11>
-<Exercicio12></Exercicio12>
-<Exercicio13></Exercicio13>
+
+	<h2>TOO FACED</h2>
+	<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+		<ProdutoCard
+			v-for="(produto, i) in produtos"
+			:key="produto.nome + i"
+			:nome="produto.nome"
+			:price="produto.price"
+			@buy="handleBuy"
+		/> 
+	</div>
+	<p v-if="mensagemCompra" style="font-weight: bold; color: #fcc4cc; margin-top: 1rem;">{{ mensagemCompra }}</p>
+
+	<!-- ...outros componentes... -->
+	<Exercicio1></Exercicio1>
+	<Exercicio2></Exercicio2>
+	<Exercicio3></Exercicio3>
+	<Exercicio4></Exercicio4>
+	<Exercicio5></Exercicio5>
+	<Exercicio6></Exercicio6>
+	<Exercicio7></Exercicio7>
+	<Exercicio8></Exercicio8>
+	<Exercicio9></Exercicio9>
+	<Exercicio10></Exercicio10>
+	<Exercicio11></Exercicio11>
+	<Exercicio12></Exercicio12>
+	<Exercicio13></Exercicio13>
 </template>
