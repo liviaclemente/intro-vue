@@ -8,6 +8,8 @@
 //import Exemplo07 from './components/Exemplo07Clique.vue'
 //import Exemplo08 from './components/Exemplo08Teclado.vue'
 //import Exemplo09 from './components/Exemplo09Enviar.vue'
+import Slot from './components/Slot.vue'
+
 // import UserCard from './components/Exemplo10Props.vue'
 // const user = {
 //         nome: String, 
@@ -40,25 +42,33 @@
 
 
 
-import { ref } from 'vue'
-import ProdutoCard from './components/Exercicios/11.1.vue'
+// import { ref } from 'vue'
+// import ProdutoCard from './components/Exercicios/11.1.vue'
 
-const produtos = ref([
-	{ nome: 'Blush em Pó Cloud Crush - Too Faced', price: 250 },
-	{ nome: 'Máscara De Cílios Better Than Sex - Too Faced', price: 221 },
-	{ nome: 'Corretivo Líquido Born This Way Super Coverage - Too Faced', price: 237 }
-]) // lISTA DE PRODUTOS
+// const produtos = ref([
+// 	{ nome: 'Blush em Pó Cloud Crush - Too Faced', price: 250 },
+// 	{ nome: 'Máscara De Cílios Better Than Sex - Too Faced', price: 221 },
+// 	{ nome: 'Corretivo Líquido Born This Way Super Coverage - Too Faced', price: 237 }
+// ]) // lISTA DE PRODUTOS
 
-const mensagemCompra = ref('')
+// const mensagemCompra = ref('')
 
-function handleBuy(nomeProduto) {
-	const msg = `Você comprou ${nomeProduto}`
-	mensagemCompra.value = msg
-	console.log(msg)
-} // MENSAGEM DE COMPRA
+// function handleBuy(nomeProduto) {
+// 	const msg = `Você comprou ${nomeProduto}`
+// 	mensagemCompra.value = msg
+// 	console.log(msg)
+// } // MENSAGEM DE COMPRA
 </script>
 
 <template>
+
+<!-- Navegação entre páginas usando Vue Router -->
+<nav>
+	<RouterLink to="/exemplo1" style="color: white;">Exemplo 01</RouterLink> |
+	<RouterLink to="/exemplo2" style="color: white;">Exemplo 02</RouterLink>
+</nav>
+<!-- O RouterView exibe o componente da rota atual -->
+<RouterView />
 <Exemplo01></Exemplo01>
 <Exemplo02></Exemplo02>
 <Exemplo03></Exemplo03>
@@ -68,13 +78,21 @@ function handleBuy(nomeProduto) {
 <Exemplo07></Exemplo07>
 <Exemplo08></Exemplo08>
 <Exemplo09></Exemplo09>
+<!-- Exemplo visual do uso de slot padrão e slot nomeado -->
+<Slot>
+	<p style="color: #f9436a; font-weight: bold;">Este conteúdo aparece no slot padrão!</p>
+	<template #extra>
+		<button style="background: #ff9800; color: white; border: none; padding: 8px 16px; border-radius: 4px;">
+			Conteúdo do <strong>slot nomeado</strong></button>
+	</template>
+</Slot>
 <!-- <UserCard :nome="user.nome" email="livia@gmail.com" idade="17" telefone="1199999999" ativo="true" ></UserCard>
 <ProductCard title="Blush em Pó Cloud Crush" :price="259" image="https://www.toofaced.com.br/media/export/cms/products/1000x1000/2f_sku_163973_1000x1000_0.jpg" :inStock="true" /> -->
 <!-- <Exemplo11 @update="atualizarTotalCliques"></Exemplo11>
 <p>Total de cliques: {{ totalCliques }}</p> -->
 
 
-	<h2>TOO FACED</h2>
+	<!-- <h2>TOO FACED</h2>
 	<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
 		<ProdutoCard
 			v-for="(produto, i) in produtos"
@@ -84,7 +102,7 @@ function handleBuy(nomeProduto) {
 			@buy="handleBuy"
 		/> 
 	</div>
-	<p v-if="mensagemCompra" style="font-weight: bold; color: #fcc4cc; margin-top: 1rem;">{{ mensagemCompra }}</p>
+	<p v-if="mensagemCompra" style="font-weight: bold; color: #fcc4cc; margin-top: 1rem;">{{ mensagemCompra }}</p> -->
 
 	<!-- ...outros componentes... -->
 	<Exercicio1></Exercicio1>
