@@ -8,7 +8,7 @@
 //import Exemplo07 from './components/Exemplo07Clique.vue'
 //import Exemplo08 from './components/Exemplo08Teclado.vue'
 //import Exemplo09 from './components/Exemplo09Enviar.vue'
-import Slot from './components/Slot.vue'
+//import Slot from './components/Slot.vue'
 
 // import UserCard from './components/Exemplo10Props.vue'
 // const user = {
@@ -39,7 +39,9 @@ import Slot from './components/Slot.vue'
 //import Exercicio12 from './components/Exercicios/7.1.vue'
 //import Exercicio13 from './components/Exercicios/8.1.vue'
 //import ProductCard from './components/Exercicios/10.1.vue'
-
+// import Exercicio14 from './components/Exercicios/12.1.vue'
+//import Exercicio15 from './components/Exercicios/12.2.vue'
+import Exercicio16 from './components/Exercicios/12.3.vue'
 
 
 // import { ref } from 'vue'
@@ -62,13 +64,14 @@ import Slot from './components/Slot.vue'
 
 <template>
 
-<!-- Navegação entre páginas usando Vue Router -->
+<!-- Navegação entre páginas usando Vue Router
 <nav>
 	<RouterLink to="/exemplo1" style="color: white;">Exemplo 01</RouterLink> |
 	<RouterLink to="/exemplo2" style="color: white;">Exemplo 02</RouterLink>
 </nav>
-<!-- O RouterView exibe o componente da rota atual -->
-<RouterView />
+O RouterView exibe o componente da rota atual -->
+<!-- <RouterView /> -->
+
 <Exemplo01></Exemplo01>
 <Exemplo02></Exemplo02>
 <Exemplo03></Exemplo03>
@@ -78,14 +81,17 @@ import Slot from './components/Slot.vue'
 <Exemplo07></Exemplo07>
 <Exemplo08></Exemplo08>
 <Exemplo09></Exemplo09>
-<!-- Exemplo visual do uso de slot padrão e slot nomeado -->
+
+<!-- Exemplo visual do uso de slot padrão e slot nomeado
 <Slot>
 	<p style="color: #f9436a; font-weight: bold;">Este conteúdo aparece no slot padrão!</p>
 	<template #extra>
 		<button style="background: #ff9800; color: white; border: none; padding: 8px 16px; border-radius: 4px;">
 			Conteúdo do <strong>slot nomeado</strong></button>
 	</template>
-</Slot>
+</Slot> -->
+
+
 <!-- <UserCard :nome="user.nome" email="livia@gmail.com" idade="17" telefone="1199999999" ativo="true" ></UserCard>
 <ProductCard title="Blush em Pó Cloud Crush" :price="259" image="https://www.toofaced.com.br/media/export/cms/products/1000x1000/2f_sku_163973_1000x1000_0.jpg" :inStock="true" /> -->
 <!-- <Exemplo11 @update="atualizarTotalCliques"></Exemplo11>
@@ -118,4 +124,29 @@ import Slot from './components/Slot.vue'
 	<Exercicio11></Exercicio11>
 	<Exercicio12></Exercicio12>
 	<Exercicio13></Exercicio13>
+	<Exercicio14>
+	<!-- <button>
+		Botão passado pelo slot padrão
+	</button> -->
+	</Exercicio14>
+	<Exercicio15>
+		<!-- <template #header>
+			<h2 style="color: #1976d2; margin: 0;">Cabeçalho do Slot</h2>
+		</template>
+		<div style="padding: 12px; color: #fff;">Conteúdo principal do slot padrão</div>
+		<template #footer>
+			<footer style="color: #fff; background: #1976d2; padding: 8px; border-radius: 0 0 8px 8px;">Rodapé do Slot</footer>
+		</template> -->
+	</Exercicio15>
+	<Exercicio16 
+		titulo="Dreaming"
+		descricao="PARTYNEXTDOOR"
+	>
+		<div>Um retrato de fuga emocional através dos sonhos, em que o eu lírico expressa desejos profundos e íntimos, 
+			buscando conexão e prazer fora da realidade imediata.</div>
+		<template #footer>
+			<span style="color: #1976d2;">https://www.youtube.com/watch?v=QHx1-CM1nvk&list=RDmrhmeSVWcXw&index=2</span>
+		</template>
+	</Exercicio16>
+
 </template>
