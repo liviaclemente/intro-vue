@@ -41,8 +41,12 @@
 //import ProductCard from './components/Exercicios/10.1.vue'
 // import Exercicio14 from './components/Exercicios/12.1.vue'
 //import Exercicio15 from './components/Exercicios/12.2.vue'
-import Exercicio16 from './components/Exercicios/12.3.vue'
+//import Exercicio16 from './components/Exercicios/12.3.vue'
 
+// import analise1 from './components/Avaliation/analise1.vue'
+// import analise2 from './components/Avaliation/analise2.vue'
+// import analise3 from './components/Avaliation/analise3.vue'
+import Formativa from './components/Avaliation/Formativa.vue'
 
 // import { ref } from 'vue'
 // import ProdutoCard from './components/Exercicios/11.1.vue'
@@ -138,7 +142,7 @@ O RouterView exibe o componente da rota atual -->
 			<footer style="color: #fff; background: #1976d2; padding: 8px; border-radius: 0 0 8px 8px;">Rodapé do Slot</footer>
 		</template> -->
 	</Exercicio15>
-	<Exercicio16 
+	<!-- <Exercicio16 
 		titulo="Dreaming"
 		descricao="PARTYNEXTDOOR"
 	>
@@ -147,6 +151,11 @@ O RouterView exibe o componente da rota atual -->
 		<template #footer>
 			<span style="color: #1976d2;">https://www.youtube.com/watch?v=QHx1-CM1nvk&list=RDmrhmeSVWcXw&index=2</span>
 		</template>
-	</Exercicio16>
+	</Exercicio16> -->
+
+	<analise1></analise1>
+	<analise2></analise2>
+	<analise3></analise3>
+	<Formativa></Formativa>
 
 </template>
